@@ -1,0 +1,14 @@
+version: '3'
+volumes:
+  portfolio-vol:
+
+services:
+  portfolio-pg:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+    volumes:
+      - portfolio-vol:/var/lib/postgresql/data
